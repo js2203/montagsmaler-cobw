@@ -21,7 +21,7 @@ class Sentences(object):
 try:
     print('start loading model')
     model = word2vec.Word2VecKeyedVectors.load_word2vec_format(
-        'https://elasticbeanstalk-us-east-1-725299698882.s3.amazonaws.com/model.bin.gz',
+        os.path.join(os.path.dirname(__file__),'model.bin.gz'),
         binary=True)
     model.init_sims(replace=True)
     print("Already existing model is loaded")
