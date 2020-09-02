@@ -20,8 +20,9 @@ class Sentences(object):
 
 try:
     print('start loading model')
+    print(os.path.join(os.path.dirname(os.path.abspath(__file__)),'model.bin.gz'))
     model = word2vec.Word2VecKeyedVectors.load_word2vec_format(
-        os.path.join(os.path.dirname(__file__),'model.bin.gz'),
+        os.path.join(os.path.dirname(os.path.abspath(__file__)),'model.bin.gz'),
         binary=True)
     model.init_sims(replace=True)
     print("Already existing model is loaded")
